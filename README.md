@@ -11,36 +11,36 @@ flowchart TB
 
     subgraph SOURCE[Data Sources]
         A1[customers.csv]
-        A2[transactions_json/]
+        A2[transactions_json]
         A3[compliance_notes.txt]
         A4[historical_fraud.parquet]
     end
 
     subgraph ETL[PySpark ETL Pipeline]
-        B1[Read all raw files]
-        B2[Data Cleaning & Normalization]
-        B3[JSON Flattening]
-        B4[Feature Engineering]
-        B5[Risk Scoring Logic]
-        B6[Write Outputs to /output]
+        B1[Read raw files]
+        B2[Cleaning and normalization]
+        B3[Flatten JSON]
+        B4[Feature engineering]
+        B5[Risk scoring]
+        B6[Write outputs]
     end
 
-    subgraph OUT[/output/]
-        C1[final/fused/]
-        C2[alerts/]
-        C3[aggregates/]
+    subgraph OUTPUTS[Pipeline Outputs]
+        C1[Final Fused Dataset]
+        C2[High-Risk Alerts]
+        C3[Customer Aggregates]
     end
 
     subgraph API[FastAPI Backend]
-        D1[/]
-        D2[/latest]
-        D3[/latest_tx]
+        D1[Health Endpoint]
+        D2[Latest Endpoint]
+        D3[Latest Transactions Endpoint]
     end
 
     subgraph DASH[Streamlit Dashboard]
         E1[Overview Metrics]
         E2[Customer Drilldown]
-        E3[High-Risk Alerts]
+        E3[High-Risk Alerts View]
         E4[Live API Updates]
         E5[Data Explorer]
     end
@@ -58,7 +58,9 @@ flowchart TB
 
     C1 --> API
     C2 --> API
+
     API --> DASH
+
 ```
 
 ---
