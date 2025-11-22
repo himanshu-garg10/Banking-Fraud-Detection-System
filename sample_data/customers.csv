@@ -1,0 +1,5 @@
+customer_id,name,credit_score,home_lat,home_lon,registered_device,account_type
+C100,Amit Kumar,780,28.61,77.2,D001,savings
+C101,Priya Sharma,690,19.07,72.87,D002,current
+C102,Rohit Singh,640,22.57,88.36,D003,savings
+C103,Sneha Patel,720,12.97,77.59,D004,savings
